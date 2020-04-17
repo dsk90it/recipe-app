@@ -13,8 +13,45 @@
         
         <input type="text" value="Untitle Recipe"/>
         <textarea placeholder="Preparation Notes"></textarea>
-        
-        <div id="todoContainer"></div>
+
+        <h2>Ingredients</h2>
+        <div class="clearfix fw" id="checkListContainer">
+            <label class="checklist">
+                <input type="checkbox" checked="checked">
+                <i class="checkmark"></i>
+                <span>One</span>
+            </label>
+            <label class="checklist">
+                <input type="checkbox">
+                <i class="checkmark"></i>
+                <span>Two</span>
+            </label>
+            <label class="checklist">
+                <input type="checkbox">
+                <i class="checkmark"></i>
+                <span>Three</span>
+            </label>
+            <label class="checklist">
+                <input type="checkbox" checked="checked">
+                <i class="checkmark"></i>
+                <span>One</span>
+            </label>
+            <label class="checklist">
+                <input type="checkbox">
+                <i class="checkmark"></i>
+                <span>Two</span>
+            </label>
+            <label class="checklist">
+                <input type="checkbox">
+                <i class="checkmark"></i>
+                <span>Three</span>
+            </label>
+        </div>
+
+        <form class="ingredient-form">
+            <input type="text">
+            <button class="btn">Add</button>
+        </form>
         
         <div class="clearfix fw btn-actions">
             <button class="fl btn btn-danger">Delete</button>

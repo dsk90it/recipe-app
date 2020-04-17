@@ -104,20 +104,6 @@ textarea{
   width: 45%;
 }
 
-/* BELOW 768px */
-@media (max-width: 767px){
-  h1{
-    width: 100%;
-    margin-bottom: 16px;
-  }
-
-  .header .search-input{
-    float: left;
-    margin: 0 0 32px;
-    width: 100%;
-  }
-}
-
 /* Recipe Cards */
 .recipe-container{
   margin: 0;
@@ -149,4 +135,98 @@ textarea{
   display: block;
   font-size: 14px;
   color: #9EA1AD;
+}
+
+
+/* Ingredients Checklist */
+.checklist {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 17px;
+  min-height: 24px;
+  margin: 0 24px 24px 0;
+}
+
+/* Custom Checkbox */
+.checklist input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  font-style: normal;
+  border-radius: 4px;
+}
+.checklist .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* hover state */
+.checklist:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Checked state */
+.checklist input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checklist input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* not checked */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.ingredient-form{
+  position: relative;
+  width: 58%;
+}
+.ingredient-form input{
+  padding-right: 92px;
+}
+.ingredient-form .btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 80px;
+  background-color: #2196F3;
+}
+
+/* BELOW 768px */
+@media (max-width: 767px){
+  .header h1{
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .header .search-input{
+    float: left;
+    margin: 0 0 32px;
+    width: 100%;
+  }
+
+  .ingredient-form{
+    width: 100%;
+  }
 }
