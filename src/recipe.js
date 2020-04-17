@@ -64,4 +64,4 @@ const removeRecipe = (id) => {
 
 recipes = loadRecipes()
 
-export { getRecipes, createRecipe, removeRecipe, updateRecipe }
+export { getRecipes, createRecipe, removeRecipe, updateRecipe, saveRecipe }

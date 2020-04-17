@@ -6,6 +6,8 @@ const editTitle = document.querySelector('#editTitle')
 const editBody = document.querySelector('#editBody')
 const deleteBtn = document.querySelector('#deleteBtn')
 const saveBtn = document.querySelector('#saveBtn')
+const addIngBtn = document.querySelector('#addIng')
+const ingTextbox = document.querySelector('#ingTextbox')
 
 intializeEditPage(hashId)
 
@@ -20,6 +22,18 @@ editBody.addEventListener('input', (e) => {
         preparation: e.target.value
     })
 })
+
+// Add Ingredient
+addIngBtn.addEventListener('click', () => {
+    // const text = ingTextbox.value.trim()
+    // addIngredient(hashId, text)
+    // renderIngredient()
+    // ingTextbox.value == ''
+})
+
+// Toggle Ingredient
+
+// Delete Ingredient
 
 deleteBtn.addEventListener('click', () => {
     removeRecipe(hashId)
