@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Today's Recipes</h1>
+    <div class="container">
+        <div class="clearfix fw header">
+            <h1 class="fl">Today's Recipes</h1>
+            <input class="fr search-input" id="searchInput" type="text" placeholder="🔍 Search">
+        </div>
+
+        <ul class="recipe-container" id="recipeContainer"></ul>
+        
+        <div class="clearfix fw btn-actions">
+            <button class="btn" id="addButton">Add Recipe</button>
+        </div>
+    </div>
     <script src="/scripts/index-bundle.js"></script>
 </body>
 </html>

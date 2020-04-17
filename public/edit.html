@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe App</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Edit Recipe</h1>
+    <div class="container">
+        <h1>Edit Recipe</h1>
+        
+        <input type="text" value="Untitle Recipe"/>
+        <textarea placeholder="Preparation Notes"></textarea>
+        
+        <div id="todoContainer"></div>
+        
+        <div class="clearfix fw btn-actions">
+            <button class="fl btn btn-danger">Delete</button>
+            <a class="fr btn" href="index.html">Save</a>
+        </div>
+    </div>
     <script src="/scripts/edit-bundle.js"></script>
 </body>
 </html>

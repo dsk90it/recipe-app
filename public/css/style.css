@@ -1,5 +1,7 @@
+/* Custom fonts */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap");
 
+/* Defaults & Resets */
 *, *:before, *:after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -12,6 +14,139 @@
 .clearfix:after {
   clear: both;
 }
+.fw{
+  width: 100%;
+}
+.fl{
+   float: left;
+}
+.fr{
+  float: right;
+}
+a{
+  text-decoration: none;
+  transition: all 0.2s;
+}
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #E0E6F2;
+  color: #373B53;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Heading */
+h1{
+  margin: 32px 0;
+  font-size: 32px;
+}
+
+/* Container */
+.container{
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 16px;
+}
+
+/* Forms elements */
+input, textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+  height: 40px;
+  outline: 0 none;
+  border: 0;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 8px 16px;
+  box-shadow: 0 6px 12px 0 rgba(158, 161, 173, 0.3);
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: all 0.2s;
+}
+textarea{
+  padding: 16px;
+  height: 300px;
+}
+
+.btn-actions{
+  padding-top: 16px;
+}
+
+.btn{
+  outline: 0 none;
+  border: 0;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
+  background-color: #050787;
+  color: #ffffff;
+  padding: 11px 24px;
+  font-weight: 600;
+  display: inline-block;
+  line-height: 1;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+.btn.btn-danger{
+  background-color: #F44336;
+}
+
+.header .search-input{
+  margin: 32px 0;
+  width: 45%;
+}
+
+/* BELOW 768px */
+@media (max-width: 767px){
+  h1{
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .header .search-input{
+    float: left;
+    margin: 0 0 32px;
+    width: 100%;
+  }
+}
+
+/* Recipe Cards */
+.recipe-container{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.recipe-container li{
+  display: block;
+  margin-bottom: 16px;
+}
+.recipe-container li a{
+  display: block;
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #d2d7e3;
+}
+.recipe-container li a:hover{
+  box-shadow: 0 4px 8px #cdced0;
+}
+.recipe-container li p{
+  margin: 0 0 4px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #050787;
+}
+.recipe-container li span{
+  display: block;
+  font-size: 14px;
+  color: #9EA1AD;
 }
