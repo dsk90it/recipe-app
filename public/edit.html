@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Edit Recipe</h1>
+        <h1>Add / Edit Recipe</h1>
         
-        <input type="text" value="Untitle Recipe"/>
-        <textarea placeholder="Preparation Notes"></textarea>
+        <input id="editTitle" type="text" placeholder="Recipe Name"/>
+        <textarea id="editBody" placeholder="Preparation Notes"></textarea>
 
         <h2>Ingredients</h2>
         <div class="clearfix fw" id="checkListContainer">
@@ -54,8 +54,8 @@
         </form>
         
         <div class="clearfix fw btn-actions">
-            <button class="fl btn btn-danger">Delete</button>
-            <a class="fr btn" href="index.html">Save</a>
+            <button id="deleteBtn" class="fl btn btn-danger">Delete</button>
+            <button id="saveBtn" class="fr btn">Save</button>
         </div>
     </div>
     <script src="/scripts/edit-bundle.js"></script>

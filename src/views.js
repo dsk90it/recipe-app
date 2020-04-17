@@ -1,6 +1,7 @@
 import { getRecipes } from "./recipe"
 import { getFilters } from "./filters"
 
+// Generate Cards HTML
 const generateCardDOM = (recipe) => {
     const recipeList = document.createElement('li')
     const recipeAnchor = document.createElement('a')
@@ -19,6 +20,7 @@ const generateCardDOM = (recipe) => {
     return recipeList
 }
 
+// Generate Ingredient Summary HTML
 const generateSummary = (recipe) => {
     const ingredients = recipe.ingredients
     const dontHave = ingredients.filter((item) => item.have)
@@ -27,6 +29,7 @@ const generateSummary = (recipe) => {
     return `${dontHave.length} ingredient${plural} to cook`
 }
 
+// Render Final DOM
 const renderDOM = () => {
     const recipeContainer = document.querySelector('#recipeContainer')
     const { searchTerm } = getFilters()
@@ -44,4 +47,18 @@ const renderDOM = () => {
     }
 }
 
-export { renderDOM }
+// Initialize Edit page
+const intializeEditPage = (id) => {
+    const currentRecipe = getRecipes().find((item) => item.id === id)
+    const editTitle = document.querySelector('#editTitle')
+    const editBody = document.querySelector('#editBody')
+
+    if(!currentRecipe){
+        location.assign('/index.html')
+    }
+
+    editTitle.value = currentRecipe.title
+    editBody.value = currentRecipe.preparation
+}
+
+export { renderDOM, intializeEditPage}
