@@ -15,43 +15,31 @@
         <textarea id="editBody" placeholder="Preparation Notes"></textarea>
 
         <h2>Ingredients</h2>
-        <div class="clearfix fw" id="checkListContainer">
-            <label class="checklist">
-                <input type="checkbox" checked="checked">
-                <i class="checkmark"></i>
-                <span>One</span>
-            </label>
-            <label class="checklist">
-                <input type="checkbox">
-                <i class="checkmark"></i>
-                <span>Two</span>
-            </label>
-            <label class="checklist">
-                <input type="checkbox">
-                <i class="checkmark"></i>
-                <span>Three</span>
-            </label>
-            <label class="checklist">
-                <input type="checkbox" checked="checked">
-                <i class="checkmark"></i>
-                <span>One</span>
-            </label>
-            <label class="checklist">
-                <input type="checkbox">
-                <i class="checkmark"></i>
-                <span>Two</span>
-            </label>
-            <label class="checklist">
-                <input type="checkbox">
-                <i class="checkmark"></i>
-                <span>Three</span>
-            </label>
-        </div>
 
         <form class="ingredient-form">
-            <input id="ingTextbox" type="text">
-            <button id="addIng" class="btn">Add</button>
+            <input name="addInput" type="text" placeholder="Enter Ingredient" autocomplete="off"/>
+            <button class="btn btn-blue">Add</button>
         </form>
+
+        <div class="ingredients-container" id="checkListContainer">
+            <div class="ingredients-col">
+                <label class="checklist">
+                    <input type="checkbox" checked="checked">
+                    <i class="checkmark"></i>
+                    <span>One</span>
+                </label>
+                <button>❌</button>
+            </div>
+            
+            <div class="ingredients-col">
+                <label class="checklist">
+                    <input type="checkbox" checked="checked">
+                    <i class="checkmark"></i>
+                    <span>One</span>
+                </label>
+                <button>❌</button>
+            </div>
+        </div>
         
         <div class="clearfix fw btn-actions">
             <button id="deleteBtn" class="fl btn btn-danger">Delete</button>

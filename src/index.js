@@ -4,6 +4,7 @@ import { setFilters } from "./filters";
 
 renderDOM()
 
+// Search Items
 document.querySelector('#searchInput').addEventListener('input', (e) => {
     setFilters({
         searchTerm: e.target.value
@@ -11,6 +12,7 @@ document.querySelector('#searchInput').addEventListener('input', (e) => {
     renderDOM()
 })
 
+// Add Recipe
 document.querySelector('#addButton').addEventListener('click', () => {
     const id = createRecipe()
     location.assign(`edit.html#${id}`)

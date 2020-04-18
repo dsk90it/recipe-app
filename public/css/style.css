@@ -47,7 +47,7 @@ h1{
 .container{
   margin: 0 auto;
   max-width: 600px;
-  padding: 0 16px;
+  padding: 0 16px 40px;
 }
 
 /* Forms elements */
@@ -98,6 +98,9 @@ textarea{
 .btn.btn-danger{
   background-color: #F44336;
 }
+.btn-blue.btn-blue{
+  background-color: #2196F3;
+}
 
 .header .search-input{
   margin: 32px 0;
@@ -138,19 +141,45 @@ textarea{
 }
 
 
-/* Ingredients Checklist */
+/* Ingredients Container */
+.ingredients-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -2%;
+}
+
+.ingredients-col{
+  margin: 0 2% 24px;
+  width: 46%;
+  min-height: 24px;
+  position: relative;
+  padding-right: 24px;
+}
+
+.ingredients-col button{
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  padding: 0;
+  background: no-repeat;
+  outline: 0 none;
+  cursor: pointer;
+}
+
+/* Custom Checkbox */
 .checklist {
-  display: inline-block;
   position: relative;
   padding-left: 35px;
   cursor: pointer;
   user-select: none;
   font-size: 17px;
   min-height: 24px;
-  margin: 0 24px 24px 0;
+  display: inline-block;
 }
 
-/* Custom Checkbox */
 .checklist input {
   position: absolute;
   opacity: 0;
@@ -210,7 +239,6 @@ textarea{
   right: 0;
   top: 0;
   min-width: 80px;
-  background-color: #2196F3;
 }
 
 /* BELOW 768px */
@@ -227,6 +255,14 @@ textarea{
   }
 
   .ingredient-form{
+    width: 100%;
+  }
+  .ingredients-container{
+    margin: 0;
+  }
+
+  .ingredients-col{
+    margin-right: 0;
     width: 100%;
   }
 }

@@ -1,45 +1,38 @@
 import { intializeEditPage } from './views'
 import { removeRecipe, updateRecipe } from './recipe'
+import { createIngredient } from './ingredients'
 
 const hashId = location.hash.substring(1)
 const editTitle = document.querySelector('#editTitle')
 const editBody = document.querySelector('#editBody')
 const deleteBtn = document.querySelector('#deleteBtn')
 const saveBtn = document.querySelector('#saveBtn')
-const addIngBtn = document.querySelector('#addIng')
-const ingTextbox = document.querySelector('#ingTextbox')
+const ingredientForm = document.querySelector('form')
 
+// Intialize edit-page with values
 intializeEditPage(hashId)
 
+// Edit Title
 editTitle.addEventListener('input', (e) => {
     updateRecipe(hashId, {
         title: e.target.value
     })
 })
 
+// Edit Notes
 editBody.addEventListener('input', (e) => {
     updateRecipe(hashId, {
         preparation: e.target.value
     })
 })
 
-// Add Ingredient
-addIngBtn.addEventListener('click', () => {
-    // const text = ingTextbox.value.trim()
-    // addIngredient(hashId, text)
-    // renderIngredient()
-    // ingTextbox.value == ''
-})
-
-// Toggle Ingredient
-
-// Delete Ingredient
-
+// Delete Recipe
 deleteBtn.addEventListener('click', () => {
     removeRecipe(hashId)
     location.assign('/index.html')
 })
 
+// Save Recipe
 saveBtn.addEventListener('click', () => {
     if(editTitle.value !== '' && editTitle.value.trim()){
         location.assign('/index.html')
@@ -47,3 +40,19 @@ saveBtn.addEventListener('click', () => {
         alert('Add Recipe Name')
     }
 })
+
+// Add Ingredient
+ingredientForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const text = e.target.addInput.value.trim()
+
+    if(text.length > 0){
+        createIngredient(hashId, text)
+        // renderIngredient()
+        e.target.addInput.value = ''
+    }
+})
+
+// Toggle Ingredient
+
+// Delete Ingredient
