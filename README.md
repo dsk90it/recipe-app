@@ -2,7 +2,7 @@
 Recipe App is a basic CRUD application that is created entirely with vanilla JavaScript. A Final project from my JS bootcamp course.
 
 
-# Demo
+# 🚀 Demo
 See it in action [here]()
 
 

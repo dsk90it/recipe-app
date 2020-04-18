@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { sampleData } from './data';
 
 let recipes = []
 
@@ -7,7 +8,7 @@ const loadRecipes = () => {
     const recipesString = localStorage.getItem('recipes')
     
     try{
-        return recipesString ? JSON.parse(recipesString) : []
+        return recipesString ? JSON.parse(recipesString) : sampleData
     } catch(e){
         return []
     }

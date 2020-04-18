@@ -245,6 +245,7 @@ textarea{
   right: 0;
   top: 0;
   min-width: 80px;
+  margin: 0;
 }
 
 /* BELOW 768px */
