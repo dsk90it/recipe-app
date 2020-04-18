@@ -29,8 +29,7 @@ const createRecipe = () => {
         id: uniqueId,
         title: '',
         ingredients: [],
-        preparation: '',
-        subtext: ''
+        preparation: ''
     })
     saveRecipe()
     

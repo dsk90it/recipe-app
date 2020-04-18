@@ -46,8 +46,8 @@ h1{
 /* Container */
 .container{
   margin: 0 auto;
-  max-width: 600px;
-  padding: 0 16px 40px;
+  max-width: 624px;
+  padding: 0 24px 40px;
 }
 
 /* Forms elements */
@@ -146,7 +146,6 @@ textarea{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 -2%;
 }
 
 .ingredients-col{

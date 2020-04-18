@@ -24,10 +24,17 @@ const generateCardDOM = (recipe) => {
 // Generate Ingredient Summary HTML
 const generateSummary = (recipe) => {
     const ingredients = recipe.ingredients
-    const dontHave = ingredients.filter((item) => item.have)
-    const plural = dontHave.length <= 1 ? '' : 's'
-
-    return `You have ${dontHave.length} ingredient${plural} to cook`
+    const zeroHave = ingredients.length == 0
+    const someHave = ingredients.filter((item) => !item.have)
+    const plural = someHave.length <= 1 ? '' : 's'
+    
+    if(zeroHave){
+        return `Add Ingredients`
+    } else if(someHave.length !== 0) {
+        return `${someHave.length} ingredient${plural} left`
+    } else{
+        return `You have all ingredients!`
+    }
 }
 
 // Render Final DOM
