@@ -1,4 +1,4 @@
-import { intializeEditPage } from './views'
+import { intializeEditPage, renderIngredients } from './views'
 import { removeRecipe, updateRecipe } from './recipe'
 import { createIngredient } from './ingredients'
 
@@ -11,6 +11,9 @@ const ingredientForm = document.querySelector('form')
 
 // Intialize edit-page with values
 intializeEditPage(hashId)
+
+// Render Ingredients
+renderIngredients(hashId)
 
 // Edit Title
 editTitle.addEventListener('input', (e) => {
@@ -32,7 +35,7 @@ deleteBtn.addEventListener('click', () => {
     location.assign('/index.html')
 })
 
-// Save Recipe
+// Save Button
 saveBtn.addEventListener('click', () => {
     if(editTitle.value !== '' && editTitle.value.trim()){
         location.assign('/index.html')
@@ -41,18 +44,16 @@ saveBtn.addEventListener('click', () => {
     }
 })
 
-// Add Ingredient
+// Add New Ingredient
 ingredientForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const text = e.target.addInput.value.trim()
 
     if(text.length > 0){
         createIngredient(hashId, text)
-        // renderIngredient()
+        renderIngredients(hashId)
         e.target.addInput.value = ''
+    } else{
+        alert('Recipe field cannot empty')
     }
 })
-
-// Toggle Ingredient
-
-// Delete Ingredient

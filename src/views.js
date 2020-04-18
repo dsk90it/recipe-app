@@ -1,5 +1,6 @@
 import { getRecipes } from "./recipe"
 import { getFilters } from "./filters"
+import { toggleIngredient, removeIngredient } from "./ingredients"
 
 // Generate Cards HTML
 const generateCardDOM = (recipe) => {
@@ -26,7 +27,7 @@ const generateSummary = (recipe) => {
     const dontHave = ingredients.filter((item) => item.have)
     const plural = dontHave.length <= 1 ? '' : 's'
 
-    return `${dontHave.length} ingredient${plural} to cook`
+    return `You have ${dontHave.length} ingredient${plural} to cook`
 }
 
 // Render Final DOM
@@ -43,7 +44,7 @@ const renderDOM = () => {
     if(filteredRecipes.length > 0){
         filteredRecipes.forEach((item) => recipeContainer.appendChild(generateCardDOM(item)))
     } else{
-        recipeContainer.innerHTML = `<p class="empty-message">No recipes to show!</p>`
+        recipeContainer.innerHTML = `<h2>No recipes to show!</h2>`
     }
 }
 
@@ -61,4 +62,61 @@ const intializeEditPage = (id) => {
     editBody.value = currentRecipe.preparation
 }
 
-export { renderDOM, intializeEditPage}
+// Generate Ingredient HTML
+const generateIngredientDOM = (currentRecipe, ingredient) => {
+    const column = document.createElement('div')
+    const label = document.createElement('label')
+    const checkbox = document.createElement('input')
+    const checkMark = document.createElement('i')
+    const labelText = document.createElement('span')
+    const closeBtn = document.createElement('button')
+
+    // add classes
+    column.classList.add('ingredients-col')
+    label.classList.add('checklist')
+    checkMark.classList.add('checkmark')
+
+    // Append elements
+    column.appendChild(label)
+    label.appendChild(checkbox)
+    label.appendChild(checkMark)
+    label.appendChild(labelText)
+    column.appendChild(closeBtn)
+
+    // Checkbox
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = ingredient.have
+    checkbox.addEventListener('change', () => {
+        toggleIngredient(ingredient)
+    })
+
+    // Label text
+    labelText.textContent = ingredient.text
+
+    // delete button
+    closeBtn.textContent = '❌'
+    closeBtn.addEventListener('click', () => {
+        removeIngredient(currentRecipe, ingredient.id)
+    })
+
+    return column
+}
+
+// Render Final Ingredients
+const renderIngredients = (recipeID) => {
+    const ingredientsContainer = document.querySelector('#ingredientsContainer')
+    const currentRecipe = getRecipes().find((item) => item.id === recipeID)
+    const currentIngredients = currentRecipe.ingredients
+    
+    ingredientsContainer.innerHTML = ''
+
+    if(currentIngredients.length > 0){
+        currentIngredients.forEach((item) => {
+            ingredientsContainer.appendChild(generateIngredientDOM(currentRecipe, item))
+        })
+    } else{
+        ingredientsContainer.innerHTML = `<h3>No Ingredients!</h3>`
+    }
+}
+
+export { renderDOM, renderIngredients, intializeEditPage}

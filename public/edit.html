@@ -15,31 +15,11 @@
         <textarea id="editBody" placeholder="Preparation Notes"></textarea>
 
         <h2>Ingredients</h2>
-
         <form class="ingredient-form">
             <input name="addInput" type="text" placeholder="Enter Ingredient" autocomplete="off"/>
             <button class="btn btn-blue">Add</button>
         </form>
-
-        <div class="ingredients-container" id="checkListContainer">
-            <div class="ingredients-col">
-                <label class="checklist">
-                    <input type="checkbox" checked="checked">
-                    <i class="checkmark"></i>
-                    <span>One</span>
-                </label>
-                <button>❌</button>
-            </div>
-            
-            <div class="ingredients-col">
-                <label class="checklist">
-                    <input type="checkbox" checked="checked">
-                    <i class="checkmark"></i>
-                    <span>One</span>
-                </label>
-                <button>❌</button>
-            </div>
-        </div>
+        <div class="ingredients-container" id="ingredientsContainer"></div>
         
         <div class="clearfix fw btn-actions">
             <button id="deleteBtn" class="fl btn btn-danger">Delete</button>

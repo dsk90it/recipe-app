@@ -167,7 +167,12 @@ textarea{
   background: no-repeat;
   outline: 0 none;
   cursor: pointer;
+  opacity: 0.6;
 }
+.ingredients-col button:hover{
+  opacity: 1;
+}
+
 
 /* Custom Checkbox */
 .checklist {
@@ -193,9 +198,11 @@ textarea{
   left: 0;
   height: 24px;
   width: 24px;
-  background-color: #eee;
+  background-color: #ffffff;
   font-style: normal;
   border-radius: 4px;
+  box-shadow: 0 6px 8px 0 rgba(158, 161, 173, 0.3);
+  transition: all 0.2s;
 }
 .checklist .checkmark:after {
   left: 9px;
@@ -205,6 +212,7 @@ textarea{
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+  transition: all 0.2s;
 }
 
 /* hover state */
