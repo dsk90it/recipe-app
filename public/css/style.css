@@ -23,6 +23,9 @@
 .fr{
   float: right;
 }
+.text-right{
+  text-align: right;
+}
 a{
   text-decoration: none;
   transition: all 0.2s;
@@ -73,6 +76,9 @@ textarea{
 
 .btn-actions{
   padding-top: 16px;
+}
+.btn-actions .btn+.btn{
+  margin-left: 16px;
 }
 
 .btn{
@@ -250,11 +256,14 @@ textarea{
 
 /* BELOW 768px */
 @media (max-width: 767px){
+  textarea{
+    height: 180px;
+  }
+
   .header h1{
     width: 100%;
     margin-bottom: 16px;
   }
-
   .header .search-input{
     float: left;
     margin: 0 0 32px;
@@ -264,10 +273,6 @@ textarea{
   .ingredient-form{
     width: 100%;
   }
-  .ingredients-container{
-    margin: 0;
-  }
-
   .ingredients-col{
     margin-right: 0;
     width: 100%;

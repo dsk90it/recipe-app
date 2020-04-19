@@ -13,7 +13,7 @@ const generateCardDOM = (recipe) => {
     recipeAnchor.setAttribute('href', `edit.html#${recipe.id}`)
 
     recipeAnchor.appendChild(recipeTitle)
-    recipeTitle.textContent = recipe.title
+    recipeTitle.textContent = !recipe.title ? 'Untitled Recipe' : recipe.title
 
     recipeAnchor.appendChild(recipeSubText)
     recipeSubText.textContent = generateSummary(recipe)

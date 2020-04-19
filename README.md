@@ -23,10 +23,12 @@ See it in action [here](https://recipe2020.netlify.app/)
 - NPM
 - 100% Responsive without using any css framework
 
+# 💾 Database
+ - localStorage
+
 
 # 🎉 Features
 - Create, Edit and Delete Recipes
-- Used localStorage to store recipes in your browser for retrieval
 
 
 # 💻 How to run locally

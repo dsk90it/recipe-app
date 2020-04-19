@@ -40,7 +40,7 @@ const createRecipe = () => {
 // Update recipe
 const updateRecipe = (id, { title, preparation }) => {
     const currentItem = recipes.find((item) => item.id === id)
-    
+
     if(typeof title === 'string'){
         currentItem.title = title
     }
