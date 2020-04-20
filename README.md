@@ -31,7 +31,7 @@ See it in action [here](https://recipe2020.netlify.app/)
 - Create, Edit and Delete Recipes
 
 
-# 💻 How to run locally
+# 💻 Installation
 **Step 1:** `git clone https://github.com/dsk90it/recipe-app.git`
 
 **Step 2:** Switch to cloned folder and run `npm install` in your terminal
